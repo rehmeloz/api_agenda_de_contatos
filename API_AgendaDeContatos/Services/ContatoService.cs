@@ -1,4 +1,5 @@
-﻿using API_AgendaDeContatos.Models;
+﻿using API_AgendaDeContatos.Enums;
+using API_AgendaDeContatos.Models;
 using API_AgendaDeContatos.Repositories;
 
 namespace API_AgendaDeContatos.Services;
@@ -44,6 +45,16 @@ public class ContatoService : IContatoService
         return contatosFavoritos;
     }
 
+    public async Task<List<Contato>> BuscaPorCategoriaENome(string nome, ECategoria categoria, int pagina, int quantidade)
+    {
+        var contatos = await _repository.BuscaPorCategoriaENome(nome, categoria, pagina, quantidade);
+
+        if (!contatos.Any())
+            throw new Exception("Contato não encontrado!");
+
+        return contatos;
+    }
+
     public async Task<Contato> AdicionaContato(Contato contato)
     {
         await _repository.AdicionaContato(contato);
@@ -55,7 +66,7 @@ public class ContatoService : IContatoService
         var contatoExistente = await _repository.BuscaPorId(id);
 
         if (contatoExistente == null)
-            throw new KeyNotFoundException("Contato não encontrado");
+            throw new KeyNotFoundException("Contato não encontrado!");
 
         await _repository.AtualizaContato(id, contatoAtualizado);
     }

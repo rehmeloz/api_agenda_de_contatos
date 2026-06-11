@@ -1,4 +1,5 @@
 ﻿using API_AgendaDeContatos.DTOs;
+using API_AgendaDeContatos.Enums;
 using API_AgendaDeContatos.Models;
 using API_AgendaDeContatos.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -84,6 +85,22 @@ namespace API_AgendaDeContatos.Controllers
             }
 
             return Ok(contatosFavoritos);
+        }
+
+        [HttpGet("buscaPorNomeECategoria")]
+        public async Task<IActionResult> BuscaPorCategoriaENome([FromQuery] string nome, [FromQuery] ECategoria categoria, int pagina = 1, int quantidade = 5)
+        {
+            _logger.LogInformation("Buscando contato por Nome e Categoria");
+
+            var contatos = await _service.BuscaPorCategoriaENome(nome, categoria, pagina, quantidade);
+
+            if (!contatos.Any())
+            {
+                _logger.LogWarning("Nenhum contato foi retornado");
+                return NotFound();
+            }
+                
+            return Ok(contatos);
         }
 
         [HttpPost]

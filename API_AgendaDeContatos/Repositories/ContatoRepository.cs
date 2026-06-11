@@ -1,6 +1,7 @@
 ﻿using API_AgendaDeContatos.Data;
-using Microsoft.EntityFrameworkCore;
+using API_AgendaDeContatos.Enums;
 using API_AgendaDeContatos.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace API_AgendaDeContatos.Repositories;
 
@@ -43,6 +44,23 @@ public class ContatoRepository : IContatoRepository
         var contatosFavoritos = await _context.Contatos.Where(c => c.Favorito).ToListAsync();
 
         return contatosFavoritos;
+    }
+
+    public async Task<List<Contato>> BuscaPorCategoriaENome(string nome, ECategoria categoria, int pagina, int quantidade)
+    {
+        // Execução diferida
+        var contatos = _context.Contatos.AsQueryable();
+
+        if (!string.IsNullOrEmpty(nome))
+            contatos = contatos.Where(n => n.Nome == nome);
+
+        if (!string.IsNullOrEmpty(categoria.ToString()))
+            contatos = contatos.Where(c => c.Categoria == categoria);
+
+        return await contatos.AsNoTracking()
+            .Skip((pagina - 1) * quantidade)
+            .Take(quantidade)
+            .ToListAsync();
     }
 
     public async Task AdicionaContato(Contato contato)
