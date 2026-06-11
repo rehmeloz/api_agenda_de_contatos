@@ -1,0 +1,139 @@
+[
+  {
+    "ContainingType": "API_AgendaDeContatos.Controllers.ContatosController",
+    "Method": "BuscaTodos",
+    "RelativePath": "Contatos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pagina",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "quantidade",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_AgendaDeContatos.Controllers.ContatosController",
+    "Method": "AdicionaContato",
+    "RelativePath": "Contatos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "contatoDto",
+        "Type": "API_AgendaDeContatos.DTOs.CriaContatoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_AgendaDeContatos.Controllers.ContatosController",
+    "Method": "BuscaPorId",
+    "RelativePath": "Contatos/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_AgendaDeContatos.Controllers.ContatosController",
+    "Method": "AtualizaContato",
+    "RelativePath": "Contatos/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "contatoDto",
+        "Type": "API_AgendaDeContatos.DTOs.AtualizaContatoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_AgendaDeContatos.Controllers.ContatosController",
+    "Method": "RemoveContato",
+    "RelativePath": "Contatos/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_AgendaDeContatos.Controllers.ContatosController",
+    "Method": "AtualizaFavorito",
+    "RelativePath": "Contatos/atualizaFavorito/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "contatoDto",
+        "Type": "API_AgendaDeContatos.DTOs.AtualizaFavoritoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_AgendaDeContatos.Controllers.ContatosController",
+    "Method": "BuscaFavoritos",
+    "RelativePath": "Contatos/buscaFavoritos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_AgendaDeContatos.Controllers.ContatosController",
+    "Method": "BuscaPorNome",
+    "RelativePath": "Contatos/buscaPorNome",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nome",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
