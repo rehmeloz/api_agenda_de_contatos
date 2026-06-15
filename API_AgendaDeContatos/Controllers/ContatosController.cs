@@ -114,7 +114,8 @@ namespace API_AgendaDeContatos.Controllers
                 Telefone = contatoDto.Telefone,
                 Email = contatoDto.Email,
                 Favorito = contatoDto.Favorito,
-                Categoria = contatoDto.Categoria
+                Categoria = contatoDto.Categoria,
+                Sobrenome = contatoDto.Sobrenome
             };
 
             var novoContato = await _service.AdicionaContato(contato);
@@ -134,7 +135,8 @@ namespace API_AgendaDeContatos.Controllers
                     Telefone = contatoDto.Telefone,
                     Email = contatoDto.Email,
                     Favorito = contatoDto.Favorito,
-                    Categoria = contatoDto.Categoria
+                    Categoria = contatoDto.Categoria,
+                    Sobrenome = contatoDto.Sobrenome
                 };
 
                 await _service.AtualizaContato(id, contato);
