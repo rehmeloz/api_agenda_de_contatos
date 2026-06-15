@@ -20,5 +20,7 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<Contato>().Property(c => c.Categoria).IsRequired();
 
         modelBuilder.Entity<Contato>().Property(t => t.Telefone).HasMaxLength(11);
+
+        modelBuilder.Entity<Contato>().Property(s => s.Sobrenome).HasMaxLength(50).IsRequired();
     }
 }
