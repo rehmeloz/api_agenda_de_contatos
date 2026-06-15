@@ -80,6 +80,7 @@ public class ContatoRepository : IContatoRepository
         contato.Telefone = contatoAtualizado.Telefone;
         contato.Favorito = contatoAtualizado.Favorito;
         contato.Categoria = contatoAtualizado.Categoria;
+        contato.Sobrenome = contatoAtualizado.Sobrenome;
 
         await _context.SaveChangesAsync();
     }
