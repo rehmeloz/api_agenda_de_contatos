@@ -54,16 +54,16 @@ namespace API_AgendaDeContatos.Controllers
             return Ok(contato);
         }
 
-        [HttpGet("buscaPorNome")]
-        public async Task<IActionResult> BuscaPorNome([FromQuery] string nome)
+        [HttpGet("buscaPorNomeESobrenome")]
+        public async Task<IActionResult> BuscaPorNomeESobrenome([FromQuery] string nome, [FromQuery] string sobrenome)
         {
-            _logger.LogInformation($"Buscando contato de nome: {nome}");
+            _logger.LogInformation($"Buscando contato de nome {nome} e sobrenome {sobrenome}");
 
-            var contato = await _service.BuscaPorNome(nome);
+            var contato = await _service.BuscaPorNomeESobrenome(nome, sobrenome);
 
             if (!contato.Any())
             {
-                _logger.LogWarning($"Contato de nome {nome} não encontrado!");
+                _logger.LogWarning($"Contato de nome {nome} e sobrenome {sobrenome} não encontrado!");
                 return NotFound();
             }
 
