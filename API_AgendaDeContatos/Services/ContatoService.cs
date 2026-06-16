@@ -25,12 +25,12 @@ public class ContatoService : IContatoService
         return await _repository.BuscaPorId(id);
     }
 
-    public async Task<List<Contato>> BuscaPorNome(string nome)
+    public async Task<List<Contato>> BuscaPorNomeESobrenome(string nome, string sobrenome)
     {
-        var contato = await _repository.BuscaPorNome(nome);
+        var contato = await _repository.BuscaPorNomeESobrenome(nome, sobrenome);
 
         if (!contato.Any())
-            throw new KeyNotFoundException("O nome informado não foi identificado na agenda de contatos!");
+            throw new KeyNotFoundException("O contato informado não foi identificado na agenda de contatos!");
 
         return contato;
     }

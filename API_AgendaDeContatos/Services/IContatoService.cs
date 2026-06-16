@@ -8,7 +8,7 @@ public interface IContatoService
     Task<List<Contato>> BuscaTodos(int pagina, int quantidade);
     Task<int> TotalContatos();
     Task<Contato?> BuscaPorId(int id);
-    Task<List<Contato>> BuscaPorNome(string nome);
+    Task<List<Contato>> BuscaPorNomeESobrenome(string nome, string sobrenome);
     Task<List<Contato>> BuscaFavoritos();
     Task<List<Contato>> BuscaPorCategoriaENome(string nome, ECategoria categoria, int pagina, int quantidade);
     Task<Contato> AdicionaContato(Contato contato);
