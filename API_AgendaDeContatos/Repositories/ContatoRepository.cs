@@ -32,9 +32,9 @@ public class ContatoRepository : IContatoRepository
         return contato;
     }
 
-    public async Task<List<Contato>> BuscaPorNome(string nome)
+    public async Task<List<Contato>> BuscaPorNomeESobrenome(string nome, string sobrenome)
     {
-        var contato = await _context.Contatos.Where(n => n.Nome.Contains(nome)).AsNoTracking().ToListAsync();
+        var contato = await _context.Contatos.Where(n => n.Nome.Contains(nome)).Where(s => s.Sobrenome.Contains(sobrenome)).AsNoTracking().ToListAsync();
 
         return contato;
     }
