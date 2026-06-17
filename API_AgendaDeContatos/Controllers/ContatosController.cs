@@ -54,7 +54,7 @@ namespace API_AgendaDeContatos.Controllers
             return Ok(contato);
         }
 
-        [HttpGet("buscaPorNomeESobrenome")]
+        [HttpGet("nome")]
         public async Task<IActionResult> BuscaPorNomeESobrenome([FromQuery] string nome, [FromQuery] string sobrenome)
         {
             _logger.LogInformation($"Buscando contato de nome {nome} e sobrenome {sobrenome}");
@@ -71,7 +71,7 @@ namespace API_AgendaDeContatos.Controllers
             return Ok(contato);
         }
 
-        [HttpGet("buscaFavoritos")]
+        [HttpGet("favoritos")]
         public async Task<IActionResult> BuscaFavoritos()
         {
             _logger.LogInformation($"Buscando contatos favoritos");
@@ -87,7 +87,7 @@ namespace API_AgendaDeContatos.Controllers
             return Ok(contatosFavoritos);
         }
 
-        [HttpGet("buscaPorNomeECategoria")]
+        [HttpGet("categoria/nome")]
         public async Task<IActionResult> BuscaPorCategoriaENome([FromQuery] string nome, [FromQuery] ECategoria categoria, int pagina = 1, int quantidade = 5)
         {
             _logger.LogInformation("Buscando contato por Nome e Categoria");
@@ -149,7 +149,7 @@ namespace API_AgendaDeContatos.Controllers
             }
         }
 
-        [HttpPatch("atualizaFavorito/{id}")]
+        [HttpPatch("Favorito/{id}")]
         public async Task<IActionResult> AtualizaFavorito(int id, AtualizaFavoritoDto contatoDto)
         {
             try
