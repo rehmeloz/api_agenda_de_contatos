@@ -1,6 +1,6 @@
 # 📋 API de Agenda de Contatos
 
-Uma API simples para cadastro e manipulação de uma Agenda de Contatos
+Uma API Rest para cadastro e manipulação de uma Agenda de Contatos
 
 ## 🚀 Tecnologias Utilizadas
 
@@ -11,7 +11,6 @@ Uma API simples para cadastro e manipulação de uma Agenda de Contatos
 - **EF Core** - ORM utilizado na API
 
 ## ✨ Funcionalidades
-
-- **Visualização** de contatos cadastrados a partir de filtros
-- **Criar** cadastros de contatos
+- **CRUD** funcional (Criar, editar, listar e excluir)
+- **Visualização** dos contatos cadastrados a partir de filtros (Por Id, nome e sobrenome, favoritos, categoria e nome)
 - **Favoritar** contatos
