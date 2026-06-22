@@ -8,7 +8,7 @@ Uma API Rest para cadastro e manipulação de uma Agenda de Contatos
 - **C#** — Linguagem principal da API
 - **.NET** — Ecossistema utilizado na API
 - **ASP.NET Core** — Framework utilizado na API
-- **EF Core** - ORM utilizado na API
+- **EF Core** — ORM utilizado na API
 
 ## ✨ Funcionalidades
 - **CRUD** funcional (Criar, editar, listar e excluir)
