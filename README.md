@@ -6,6 +6,8 @@ Uma API simples para cadastro e manipulação de uma Agenda de Contatos
 
 ### Backend
 - **C#** — Linguagem principal da API
+- **.NET** — ecossistema utilizado na API
+- **ASP.NET Core** — framework utilizado na API
 - **EF Core** - ORM utilizado na API
 
 ## ✨ Funcionalidades
