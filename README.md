@@ -1,6 +1,6 @@
 # 📋 API de Agenda de Contatos
 
-Uma API Rest para cadastro e manipulação de uma Agenda de Contatos
+API Rest para cadastro e manipulação de uma Agenda de Contatos
 
 ## 🚀 Tecnologias Utilizadas
 
@@ -8,9 +8,9 @@ Uma API Rest para cadastro e manipulação de uma Agenda de Contatos
 - **C#** — Linguagem principal da API
 - **.NET** — Ecossistema utilizado na API
 - **ASP.NET Core** — Framework utilizado na API
-- **EF Core** — ORM utilizado na API
+- **Entity Framework Core** — ORM utilizado para manipulação de dados na API
 
 ## ✨ Funcionalidades
 - **CRUD** funcional (Criar, editar, listar e excluir)
-- **Visualização** dos contatos cadastrados a partir de filtros (Por Id, nome e sobrenome, favoritos, categoria e nome)
+- **Visualização** dos contatos cadastrados a partir de filtros (Por id, nome e sobrenome, favoritos, categoria e nome)
 - **Favoritar** contatos
